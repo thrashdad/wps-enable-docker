@@ -34,11 +34,11 @@ RUN wget -q $URL/WSP_Enable_8.5_Setup.zip -O /tmp/wcm.zip \
     && /opt/IBM/WebSphere/AppServer/profiles/cw_profile/bin/stopServer.sh server1 \
        -username wpsadmin \
        -password wpsadmin \
-# Install IBM WebSphere Portal 8.5 CF10
-    && wget -q $URL/8.5-WP-WCM-Combined-CFPI55632-Server-CF10.zip -O /tmp/portal_cf.zip \
+# Install IBM WebSphere Portal 8.5 CF12
+    && wget -q $URL/8.5-WP-WCM-Combined-CFPI64037-Server-CF12.zip -O /tmp/portal_cf.zip \
     && mkdir /tmp/portal_cf \
     && unzip -qd /tmp/portal_cf /tmp/portal_cf.zip \
-    && unzip -qd /tmp/portal_cf /tmp/portal_cf/WP8500CF10_Server.zip \
+    && unzip -qd /tmp/portal_cf /tmp/portal_cf/WP8500CF12_Server.zip \
     && /opt/IBM/InstallationManager/eclipse/tools/imcl input /tmp/portal_cf_response.xml \
        -showProgress \
        -acceptLicense \

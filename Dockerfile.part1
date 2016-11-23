@@ -11,7 +11,7 @@ ARG URL
 ######################### IBM Installation Manager ########################
 
 # Install Installation Manager
-RUN wget -q $URL/agent.installer.linux.gtk.x86_64_1.8.4000.20151125_0201.zip -O /tmp/IM.zip \
+RUN wget -q $URL/agent.installer.linux.gtk.x86_64_1.8.5001.20161016_1705.zip -O /tmp/IM.zip \
     && mkdir /tmp/im &&  unzip -qd /tmp/im /tmp/IM.zip \
     && /tmp/im/installc -acceptLicense -accessRights admin \
       -installationDirectory "/opt/IBM/InstallationManager"  \
@@ -37,8 +37,8 @@ RUN wget -q $URL/WASND_v8.5.5_1of3.zip  -O /tmp/was1.zip \
 ###### IBM WebSphere Application Server Network Deployment Fixpack #######
 
 # Install IBM WebSphere Application Server ND Fixpack v8558
-RUN wget -q $URL/8.5.5-WS-WAS-FP0000008-part1.zip -O /tmp/wasfp1.zip \
-    && wget -q $URL/8.5.5-WS-WAS-FP0000008-part2.zip -O /tmp/wasfp2.zip \
+RUN wget -q $URL/8.5.5-WS-WAS-FP0000010-part1.zip -O /tmp/wasfp1.zip \
+    && wget -q $URL/8.5.5-WS-WAS-FP0000010-part2.zip -O /tmp/wasfp2.zip \
     && mkdir /tmp/wasfp \
     && unzip  -qd /tmp/wasfp /tmp/wasfp1.zip  \
     && unzip -qd /tmp/wasfp /tmp/wasfp2.zip \
