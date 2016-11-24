@@ -1,11 +1,10 @@
 FROM part2
 
-MAINTAINER Amir Barkal <amirb@webtech-inv.co.il>
+MAINTAINER dayreiner
 
-RUN apt-get update && apt-get install -y \
-    unzip \
-    wget \
-    && rm -rf /var/lib/apt/lists/*
+RUN yum clean all && yum makecache fast && yum -y update \
+    && yum -y install wget unzip \
+    && yum clean all
 
 ARG HOST_NAME
 

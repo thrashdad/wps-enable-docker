@@ -1,10 +1,10 @@
-FROM ubuntu:15.10
+FROM centos:latest
 
-MAINTAINER Amir Barkal <amirb@webtech-inv.co.il>
+MAINTAINER dayreiner
 
-RUN apt-get update && apt-get install -y \
-    unzip \
-    wget
+RUN yum clean all && yum makecache fast && yum -y update \
+    && yum -y install wget unzip \
+    && yum clean all
 
 ARG URL
 
@@ -36,7 +36,7 @@ RUN wget -q $URL/WASND_v8.5.5_1of3.zip  -O /tmp/was1.zip \
 
 ###### IBM WebSphere Application Server Network Deployment Fixpack #######
 
-# Install IBM WebSphere Application Server ND Fixpack v85510
+# Install IBM WebSphere Application Server ND Fixpack v8558
 RUN wget -q $URL/8.5.5-WS-WAS-FP0000010-part1.zip -O /tmp/wasfp1.zip \
     && wget -q $URL/8.5.5-WS-WAS-FP0000010-part2.zip -O /tmp/wasfp2.zip \
     && mkdir /tmp/wasfp \
