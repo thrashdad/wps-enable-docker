@@ -43,8 +43,8 @@ You build the image in steps to reduce final image size. Make sure you put all s
    + Current version level is:
 
      * Java 7.0.6.1
-     * Websphere Application Server ND 8.5.5 Fix Pack 10
-     * Portal Server WCM 8.5 Cumulative Fix 12
+     * Websphere Application Server ND 8.5.5 Fix Pack 12
+     * Portal Server WCM 8.5 Cumulative Fix 15
      * Installation Manager 1.8.5.1
 
    + The following IBM part numbers and source files were used to construct the image:
@@ -57,6 +57,8 @@ You build the image in steps to reduce final image size. Make sure you put all s
      * CIK2IML WASND_v8.5.5_2of3.zip
      * CIK2JML WASND_v8.5.5_3of3.zip
      * 1.8.5.1-IBMIM-LINUX-X86_64-20161016_1705 (agent.installer.linux.gtk.x86_64_1.8.5001.20161016_1705.zip)
-     * 8.5-WP-WCM-Combined-CFPI64037-Server-CF12.zip
-     * 8.5.5-WS-WAS-FP0000010-part1.zip
-     * 8.5.5-WS-WAS-FP0000010-part2.zip
+     * 8.5-9.0-WP-WCM-Combined-CFPI83476-Server-CF15.zip
+     * 8.5.5-WS-WAS-FP012-part1.zip
+     * 8.5.5-WS-WAS-FP012-part2.zip
+     * 8.5.5-WS-WAS-FP012-part3.zip
+
