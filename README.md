@@ -21,11 +21,13 @@ Inspired by [amirbarkal GitHub](https://github.com/amirbarkal/wps-enable-docker)
 4. Run a container by using the part1 image to create a .tar file with only what we need to run WAS (this keeps image size to a minimum):
 
    `docker run -v ${pwd}:/tmp -it part1`
+
 Note: the user that the image is running as (ie - UID 1) needs to have write access to the current directory.
 
 5. Create a clean WAS image from .tar file: 
 
    `docker build -t part2 -f Dockerfile.part2 .`
+
 This unpacks the .tar file in to a clean image.
 
 6. Build a WebSphere Portal image by installing Portal 8.5 and CF 15 into a new image based on part2 (this part may take some time):
