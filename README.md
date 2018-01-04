@@ -18,15 +18,19 @@ Inspired by [amirbarkal GitHub](https://github.com/amirbarkal/wps-enable-docker)
 3. Build base WebSphere Application Server ND image (with fix pack and Java SDK):
 
    `docker build -t part1 --build-arg=URL=http://www.where-your-source-files-are.com -f Dockerfile.part1 .`
-4. Run a container by using the part1 image to create a .tar file with only what we need to run WAS (this keeps image size to a minimum):
+4. Run a container by using the part1 image to create a .tar file with only what we need to run WAS: 
+(this keeps image size to a minimum)
 
    `docker run -v ${pwd}:/tmp -it part1`
+
 Note: the user that the image is running as (ie - UID 1) needs to have write access to the current directory.
 5. Create a clean WAS image from .tar file: 
 
    `docker build -t part2 -f Dockerfile.part2 .`
+
 This unpacks the .tar file in to a clean image.
-4. Build a WebSphere Portal image by installing Portal 8.5 and CF 15 into a new image based on part2 (this part may take some time):
+4. Build a WebSphere Portal image by installing Portal 8.5 and CF 15 into a new image based on part2: 
+(this part may take some time)
 
    `docker build -t part3 --build-arg=URL=http://www.where-your-source-files-are.com --build-arg=HOST_NAME=portal1 -f Dockerfile.part3 .`
 5. Run a container by using the part3 image to create a .tar file with only what we need to run Portal (again...!):
